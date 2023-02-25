@@ -1,4 +1,4 @@
-# Proyecto20_
+# Proyecto_Grupo_05
 Proyecto de Programación Semana 7 20% FIDELITAS, Intro Progra
 Número del grupo 05.
 Integrantes:
