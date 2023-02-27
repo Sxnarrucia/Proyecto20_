@@ -62,6 +62,7 @@ public class AlquileresControlador {
                 } else {
                     JOptionPane.showMessageDialog(null, "Opcion no válida");
                 }
+                break;
             case 3:
                 if (indexAlquiler != -1) {
                     int mensual = alquileresList.get(indexAlquiler).getMensualidad();
@@ -71,6 +72,7 @@ public class AlquileresControlador {
                 } else {
                     JOptionPane.showMessageDialog(null, "Opcion no válida");
                 }
+                break;
         }
     }
 
