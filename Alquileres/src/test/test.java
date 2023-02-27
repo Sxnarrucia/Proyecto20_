@@ -39,6 +39,6 @@ public class test {
                     salir = true;
                     break;
             }
-        } while (salir = true);
+        } while (salir == false);
     }
 }
