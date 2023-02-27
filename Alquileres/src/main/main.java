@@ -2,6 +2,7 @@ package main;
 
 import controller.AlquileresControlador;
 import controller.MenuController;
+import controller.PersonasController;
 import javax.swing.JOptionPane;
 
 /**
@@ -43,7 +44,46 @@ public class main {
     }
 
     public static void personas() {
-        JOptionPane.showMessageDialog(null, "Personas");
+        MenuController menu = new MenuController();
+        PersonasController persona = new PersonasController();
+        int opcion;
+        do {
+            try {
+                opcion = Integer.parseInt(JOptionPane.showInputDialog(null, "¿Qué gestión desea realizar\n "
+                        + " 1 = Agregar persona\n "
+                        + " 2 = Modificar persona\n "
+                        + " 3 = Ver personas\n "
+                        + " 4 = Informe de personas\n "
+                        + " 5 = Eliminar persona\n "
+                        + " 6 = Salir al menú principal "));
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Opción inválida");
+                opcion = 0;
+            }
+
+            switch (opcion) {
+                case 1:
+                    persona.agregar();
+                    break;
+                case 2:
+                    persona.modificar();
+                    break;
+                case 3:
+                    persona.ver();
+                    break;
+                case 4:
+                    persona.informe();
+                    break;
+                case 5:
+                    persona.eliminar();
+                    break;
+                case 6:
+                    Inicio();
+                    break;
+            }
+        } while (opcion != 7);
+        JOptionPane.showMessageDialog(null, "Opción no válida");
+        Inicio();
     }
 
     public static void alquileres() {
@@ -52,13 +92,13 @@ public class main {
         int opcion;
         do {
             try {
-            opcion = Integer.parseInt(JOptionPane.showInputDialog(null, "¿Qué gestión desea realizar\n "
-            +" 1 = Agregar alquiler\n "
-            +" 2 = Modificar alquiler\n "
-            +" 3 = Ver alquileres\n "
-            +" 4 = Informe de alquileres\n "
-            +" 5 = Eliminar alquiler\n "
-            +" 6 = Salir al menú principal "));
+                opcion = Integer.parseInt(JOptionPane.showInputDialog(null, "¿Qué gestión desea realizar\n "
+                        + " 1 = Agregar alquiler\n "
+                        + " 2 = Modificar alquiler\n "
+                        + " 3 = Ver alquileres\n "
+                        + " 4 = Informe de alquileres\n "
+                        + " 5 = Eliminar alquiler\n "
+                        + " 6 = Salir al menú principal "));
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Opción inválida");
                 opcion = 0;
