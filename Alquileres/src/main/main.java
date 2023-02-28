@@ -3,6 +3,7 @@ package main;
 import controller.AlquileresControlador;
 import controller.MenuController;
 import controller.PersonasController;
+import controller.EdificiosController;
 import javax.swing.JOptionPane;
 
 /**
@@ -40,7 +41,46 @@ public class main {
     }
 
     public static void edificios() {
-        JOptionPane.showMessageDialog(null, "Edificios");
+        MenuController menu = new MenuController();
+        EdificiosController edificio = new EdificiosController();
+        int opcion;
+        do {
+            try {
+                opcion = Integer.parseInt(JOptionPane.showInputDialog(null, "¿Qué gestión desea realizar\n "
+                        + " 1 = Agregar edificio\n "
+                        + " 2 = Modificar edificio\n "
+                        + " 3 = Ver edificios\n "
+                        + " 4 = Informe de edificios\n "
+                        + " 5 = Eliminar edificio\n "
+                        + " 6 = Salir al menú principal "));
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Opción inválida");
+                opcion = 0;
+            }
+
+            switch (opcion) {
+                case 1:
+                    edificio.agregar();
+                    break;
+                case 2:
+                    edificio.modificar();
+                    break;
+                case 3:
+                    edificio.ver();
+                    break;
+                case 4:
+                    edificio.informe();
+                    break;
+                case 5:
+                    edificio.eliminar();
+                    break;
+                case 6:
+                    Inicio();
+                    break;
+            }
+        } while (opcion != 7);
+        JOptionPane.showMessageDialog(null, "Opción no válida");
+        Inicio();
     }
 
     public static void personas() {
